@@ -11,57 +11,41 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 
 		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
 			'section': 'advanced',
-			'groups': {
-				'code': {
-					'label': 'Código-fonte',
-					'tools': {
-						'my-nowiki': {
-							label: 'Não interpretar a marcação wiki',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/8/82/Nowiki_icon.png',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "<nowiki>",
-									post: "</nowiki>"
-								}
-							}
-						},
-						'my-code': {
-							label: 'Código',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/2/23/Button_code.png',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "<code>",
-									post: "</code>"
-								}
-							}
-						},
-						'my-pre': {
-							label: 'Código pré-formatado',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3c/Button_pre.png',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "<pre>",
-									post: "</pre>"
-								}
-							}
-						},
-						'my-source': {
-							label: 'Código-fonte',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d2/Button_source.png',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "<source lang=>",
-									post: "</source>"
-								}
-							}
+			'group': 'format',
+			'tools': {
+				'my-code': {
+					label: 'Código',
+					type: 'button',
+					icon: 'http://upload.wikimedia.org/wikipedia/commons/2/23/Button_code.png',
+					action: {
+						type: 'encapsulate',
+						options: {
+							pre: "<code>",
+							post: "</code>"
+						}
+					}
+				},
+				'my-pre': {
+					label: 'Código pré-formatado',
+					type: 'button',
+					icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3c/Button_pre.png',
+					action: {
+						type: 'encapsulate',
+						options: {
+							pre: "<pre>",
+							post: "</pre>"
+						}
+					}
+				},
+				'my-source': {
+					label: 'Código-fonte',
+					type: 'button',
+					icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d2/Button_source.png',
+					action: {
+						type: 'encapsulate',
+						options: {
+							pre: "<source lang=>",
+							post: "</source>"
 						}
 					}
 				}
