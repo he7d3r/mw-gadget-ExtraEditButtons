@@ -176,7 +176,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								options: {
 									pre: "[[Imagem:Yes check.svg|15px]] '''Feito'''"
 								}
-							},
+							}
+						},
 						'comment': {
 							label: 'Comentário',
 							type: 'button',
