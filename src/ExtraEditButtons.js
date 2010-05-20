@@ -2,9 +2,13 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 	$j(document).ready( function() {
 		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
 			'sections': {
-				'emoticons': {
+				'imagens': {
 					'type': 'toolbar',
-					'label': 'Emoticons'
+					'label': 'Imagens'
+				},
+				'admin': {
+					'type': 'toolbar',
+					'label': 'Administração'
 				}
 			}
 		} );
@@ -53,7 +57,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 		} );
 
 		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
-			'section': 'emoticons',
+			'section': 'imagens',
 			'groups': {
 				'faces': {
 					'label': 'Carinhas',
@@ -146,6 +150,67 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								}
 							}
 						}
+					}
+				},
+				'outras': {
+					'label': 'Outras',
+					'tools': {
+						'done': {
+							label: 'Feito',
+							type: 'button',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/4/4e/Button_fait2.png',
+							action: {
+								type: 'encapsulate',
+								options: {
+									pre: "[[Image:Yes check.svg|15px]] '''Feito'''"
+								}
+							}
+						}
+					}
+				}
+			}
+		} );
+
+		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
+			'section': 'admin',
+			'groups': {
+				'delete': {
+					'label': 'Eliminação rápida',
+					'tools': {
+						'teste': {
+							label: 'Teste feito fora da caixa de areia',
+							type: 'button',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Wiki_test.GIF',
+							action: {
+								type: 'encapsulate',
+								options: {
+									pre: "{" + "{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])|~~" + "~~}}"
+								}
+							}
+						},
+						'spam': {
+							label: 'SPAM',
+							type: 'button',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3d/ButtonSpam.png',
+							action: {
+								type: 'encapsulate',
+								options: {
+									pre: "{" + "{ER|SPAM|~~" + "~~}}"
+								}
+							}
+						},
+						'exer': {
+							label: 'Pedido de resolução de exercícios',
+							type: 'button',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_Nuvola_apps_edu_lang.png',
+							action: {
+								type: 'encapsulate',
+								options: {
+									pre: "{" + "{ER|Pedido de resolução de exercícios|~~" + "~~}}"
+								}
+							}
+						}
+
 					}
 				}
 			}
