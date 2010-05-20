@@ -52,6 +52,18 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							post: "</source>"
 						}
 					}
+				},
+				'my-commnet': {
+					label: 'Comentário',
+					type: 'button',
+					icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3b/Comment-button-bg.png',
+					action: {
+						type: 'encapsulate',
+						options: {
+							pre: "<!-- ",
+							post: " -->"
+						}
+					}
 				}
 			}
 		} );
@@ -69,7 +81,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Image:Sad.png]]"
+									pre: "[[Imagem:Sad.png]]"
 								}
 							}
 						},
@@ -80,7 +92,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Image:Smile.png]]"
+									pre: "[[Imagem:Smile.png]]"
 								}
 							}
 						},
@@ -91,7 +103,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Image:Teeth.png]]"
+									pre: "[[Imagem:Teeth.png]]"
 								}
 							}
 						},
@@ -102,7 +114,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Image:Tongue.png]]"
+									pre: "[[Imagem:Tongue.png]]"
 								}
 							}
 						},
@@ -113,7 +125,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Image:Confused.png]]"
+									pre: "[[Imagem:Confused.png]]"
 								}
 							}
 						},
@@ -124,7 +136,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Image:Cry.png]]"
+									pre: "[[Imagem:Cry.png]]"
 								}
 							}
 						},
@@ -135,7 +147,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Image:Wink.png]]"
+									pre: "[[Imagem:Wink.png]]"
 								}
 							}
 						},
@@ -146,7 +158,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Image:Sleeping.png|27px]]"
+									pre: "[[Imagem:Sleeping.png|27px]]"
 								}
 							}
 						}
@@ -162,7 +174,17 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Image:Yes check.svg|15px]] '''Feito'''"
+									pre: "[[Imagem:Yes check.svg|15px]] '''Feito'''"
+								}
+							},
+						'comment': {
+							label: 'Comentário',
+							type: 'button',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/4/4d/Button_reticence.png',
+							action: {
+								type: 'encapsulate',
+								options: {
+									pre: "[[Imagem:Symbol comment vote.svg|15px]] '''Comentário'''"
 								}
 							}
 						}
@@ -175,7 +197,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 			'section': 'admin',
 			'groups': {
 				'delete': {
-					'label': 'Eliminação rápida',
+					'label': 'Eliminação',
 					'tools': {
 						'teste': {
 							label: 'Teste feito fora da caixa de areia',
@@ -209,8 +231,40 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 									pre: "{" + "{ER|Pedido de resolução de exercícios|~~" + "~~}}"
 								}
 							}
+						},
+						'propor': {
+							label: 'Propor eliminação da página/imagem',
+							type: 'button',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9f/Button_broom3.png',
+							action: {
+								type: 'encapsulate',
+								options: {
+									pre: "{" + "{Eliminação}}"
+								}
+							}
+						},
+						'vda': {
+							label: 'Violação dos direitos de autor',
+							type: 'button',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/7/75/Wiki_c_copy.gif',
+							action: {
+								type: 'encapsulate',
+								options: {
+									pre: "{" + "{VDA}}"
+								}
+							}
+						},
+						'pedia': {
+							label: 'Inadequado: Conteúdo enciclopédico',
+							type: 'button',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/c/cb/Button_wikipedia.png',
+							action: {
+								type: 'encapsulate',
+								options: {
+									pre: "{" + "{Inadequado|Conteúdo enciclopédico|[[w:]]|~~"  +"~~}}"
+								}
+							}
 						}
-
 					}
 				}
 			}
