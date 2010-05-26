@@ -207,7 +207,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "{" + "{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])|~~" + "~~}}"
+									pre: "{" + "{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])|~~" + "~~}}\n"
 								}
 							}
 						},
@@ -218,7 +218,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "{" + "{ER|SPAM|~~" + "~~}}"
+									pre: "{" + "{ER|SPAM|~~" + "~~}}\n"
 								}
 							}
 						},
@@ -229,7 +229,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "{" + "{ER|Pedido de resolução de exercícios|~~" + "~~}}"
+									pre: "{" + "{ER|Pedido de resolução de exercícios|~~" + "~~}}\n"
 								}
 							}
 						},
@@ -240,7 +240,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "{" + "{Eliminação}}"
+									pre: "{" + "{Eliminação}}\n"
 								}
 							}
 						},
@@ -251,7 +251,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "{" + "{VDA}}"
+									pre: "{" + "{VDA|1=}}\n"
 								}
 							}
 						},
@@ -262,7 +262,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "{" + "{Inadequado|Conteúdo enciclopédico|[[w:]]|~~"  +"~~}}"
+									pre: "{" + "{Inadequado|Conteúdo enciclopédico|[[w:]]|~~"  +"~~}}\n"
 								}
 							}
 						}
