@@ -207,7 +207,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "{" + "{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])|~~" + "~~}}\\n"
+									pre: "{" + "{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])|~~" + "~~}}\n"
 								}
 							}
 						},
