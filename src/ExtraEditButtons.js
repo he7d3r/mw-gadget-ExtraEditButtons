@@ -5,10 +5,6 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 				'imagens': {
 					'type': 'toolbar',
 					'label': 'Imagens'
-				},
-				'admin': {
-					'type': 'toolbar',
-					'label': 'Administração'
 				}
 			}
 		} );
@@ -194,82 +190,6 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 			}
 		} );
 
-		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
-			'section': 'admin',
-			'groups': {
-				'delete': {
-					'label': 'Eliminação',
-					'tools': {
-						'teste': {
-							label: 'Teste feito fora da caixa de areia',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Wiki_test.GIF',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "{" + "{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])|~~" + "~~}}\n"
-								}
-							}
-						},
-						'spam': {
-							label: 'SPAM',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3d/ButtonSpam.png',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "{" + "{ER|SPAM|~~" + "~~}}\n"
-								}
-							}
-						},
-						'exer': {
-							label: 'Pedido de resolução de exercícios',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_Nuvola_apps_edu_lang.png',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "{" + "{ER|Pedido de resolução de exercícios|~~" + "~~}}\n"
-								}
-							}
-						},
-						'propor': {
-							label: 'Propor eliminação da página/imagem',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9f/Button_broom3.png',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "{" + "{Eliminação}}\n"
-								}
-							}
-						},
-						'vda': {
-							label: 'Violação dos direitos de autor',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/7/75/Wiki_c_copy.gif',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "{" + "{VDA|1=}}\n"
-								}
-							}
-						},
-						'pedia': {
-							label: 'Inadequado: Conteúdo enciclopédico',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/c/cb/Button_wikipedia.png',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "{" + "{Inadequado|Conteúdo enciclopédico|[[w:]]|~~"  +"~~}}\n"
-								}
-							}
-						}
-					}
-				}
-			}
-		} );
 
 		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
 			'section': 'main',
@@ -320,5 +240,93 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 				}
 			}
 		} );
+
+		if ( "http://pt.wikibooks.org" == wgServer) {
+			$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
+				'sections': {
+					'admin': {
+						'type': 'toolbar',
+						'label': 'Administração'
+					}
+				}
+			} );
+
+			$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
+				'section': 'admin',
+				'groups': {
+					'delete': {
+						'label': 'Eliminação',
+						'tools': {
+							'teste': {
+								label: 'Teste feito fora da caixa de areia',
+								type: 'button',
+								icon: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Wiki_test.GIF',
+								action: {
+									type: 'encapsulate',
+									options: {
+										pre: "{" + "{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])|~~" + "~~}}\n"
+									}
+								}
+							},
+							'spam': {
+								label: 'SPAM',
+								type: 'button',
+								icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3d/ButtonSpam.png',
+								action: {
+									type: 'encapsulate',
+									options: {
+										pre: "{" + "{ER|SPAM|~~" + "~~}}\n"
+									}
+								}
+							},
+							'exer': {
+								label: 'Pedido de resolução de exercícios',
+								type: 'button',
+								icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_Nuvola_apps_edu_lang.png',
+								action: {
+									type: 'encapsulate',
+									options: {
+										pre: "{" + "{ER|Pedido de resolução de exercícios|~~" + "~~}}\n"
+									}
+								}
+							},
+							'propor': {
+								label: 'Propor eliminação da página/imagem',
+								type: 'button',
+								icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9f/Button_broom3.png',
+								action: {
+									type: 'encapsulate',
+									options: {
+										pre: "{" + "{Eliminação}}\n"
+									}
+								}
+							},
+							'vda': {
+								label: 'Violação dos direitos de autor',
+								type: 'button',
+								icon: 'http://upload.wikimedia.org/wikipedia/commons/7/75/Wiki_c_copy.gif',
+								action: {
+									type: 'encapsulate',
+									options: {
+										pre: "{" + "{VDA|1=}}\n"
+									}
+								}
+							},
+							'pedia': {
+								label: 'Inadequado: Conteúdo enciclopédico',
+								type: 'button',
+								icon: 'http://upload.wikimedia.org/wikipedia/commons/c/cb/Button_wikipedia.png',
+								action: {
+									type: 'encapsulate',
+									options: {
+										pre: "{" + "{Inadequado|Conteúdo enciclopédico|[[w:]]|~~"  +"~~}}\n"
+									}
+								}
+							}
+						}
+					}
+				}
+			} );
+		}
 	} );
 }
