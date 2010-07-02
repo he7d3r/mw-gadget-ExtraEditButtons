@@ -77,7 +77,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Imagem:Sad.png]]"
+									pre: "[[Image:Sad.png]]"
 								}
 							}
 						},
@@ -88,7 +88,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Imagem:Smile.png]]"
+									pre: "[[Image:Smile.png]]"
 								}
 							}
 						},
@@ -99,7 +99,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Imagem:Teeth.png]]"
+									pre: "[[Image:Teeth.png]]"
 								}
 							}
 						},
@@ -110,7 +110,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Imagem:Tongue.png]]"
+									pre: "[[Image:Tongue.png]]"
 								}
 							}
 						},
@@ -121,7 +121,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Imagem:Confused.png]]"
+									pre: "[[Image:Confused.png]]"
 								}
 							}
 						},
@@ -132,7 +132,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Imagem:Cry.png]]"
+									pre: "[[Image:Cry.png]]"
 								}
 							}
 						},
@@ -143,7 +143,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Imagem:Wink.png]]"
+									pre: "[[Image:Wink.png]]"
 								}
 							}
 						},
@@ -154,7 +154,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Imagem:Sleeping.png|27px]]"
+									pre: "[[Image:Sleeping.png|27px]]"
 								}
 							}
 						}
@@ -163,6 +163,29 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 				'outras': {
 					'label': 'Outras',
 					'tools': {
+						'agree': {
+							label: 'Concordo',
+							type: 'button',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/9/94/Symbol_support_vote.svg',
+							action: {
+								type: 'encapsulate',
+								options: {
+									pre: "[[Image:Symbol support vote.svg|15px]] '''Concordo'''"
+								}
+							}
+						},
+
+						'disagree': {
+							label: 'Discordo',
+							type: 'button',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/7/7f/Symbol_oppose_vote.svg',
+							action: {
+								type: 'encapsulate',
+								options: {
+									pre: "[[Image:Symbol oppose vote.svg|15px]] '''Discordo'''"
+								}
+							}
+						},
 						'done': {
 							label: 'Feito',
 							type: 'button',
@@ -170,7 +193,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Imagem:Yes check.svg|15px]] '''Feito'''"
+									pre: "[[Image:Yes check.svg|15px]] '''Feito'''"
 								}
 							}
 						},
@@ -181,7 +204,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 							action: {
 								type: 'encapsulate',
 								options: {
-									pre: "[[Imagem:Symbol comment vote.svg|15px]] '''Comentário'''"
+									pre: "[[Image:Symbol comment vote.svg|15px]] '''Comentário'''"
 								}
 							}
 						}
