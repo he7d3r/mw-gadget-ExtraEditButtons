@@ -166,7 +166,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 						'agree': {
 							label: 'Concordo',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/9/94/Symbol_support_vote.svg',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Symbol_support_vote.svg/200px-Symbol_support_vote.svg.png',
 							action: {
 								type: 'encapsulate',
 								options: {
@@ -178,7 +178,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 						'disagree': {
 							label: 'Discordo',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/7/7f/Symbol_oppose_vote.svg',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Symbol_oppose_vote.svg/200px-Symbol_oppose_vote.svg.png',
 							action: {
 								type: 'encapsulate',
 								options: {
