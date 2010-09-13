@@ -287,7 +287,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{{ER|motivo|~~" + "~~}}\n"
+										pre: "{" + "{ER|motivo",
+										post: "|~~" + "~~}}\n"
 									}
 								}
 							},
@@ -298,7 +299,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])|~~" + "~~}}\n"
+										pre: "{" + "{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])",
+										post: "|~~" + "~~}}\n"
 									}
 								}
 							},
@@ -309,7 +311,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{ER|SPAM|~~" + "~~}}\n"
+										pre: "{" + "{ER|SPAM",
+										post: "|~~" + "~~}}\n"
 									}
 								}
 							},
@@ -320,7 +323,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{ER|Pedido de resolução de exercícios|~~" + "~~}}\n"
+										pre: "{" + "{ER|Pedido de resolução de exercícios",
+										post: "|~~" + "~~}}\n"
 									}
 								}
 							},
@@ -331,7 +335,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{Eliminação}}\n"
+										pre: "{" + "{Eliminação",
+										post: "}}\n"
 									}
 								}
 							},
@@ -342,7 +347,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{VDA|1=}}\n"
+										pre: "{" + "{VDA|1=",
+										post: "}}\n"
 									}
 								}
 							},
@@ -353,7 +359,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{Inadequado|Conteúdo enciclopédico|[[w:]]|~~"  +"~~}}\n"
+										pre: "{" + "{Inadequado|Conteúdo enciclopédico|[[w:",
+										post: "]]|~~" + "~~}}\n"
 									}
 								}
 							}
@@ -369,7 +376,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{bv-ip}} ~~" + "~~}}\n"
+										pre: "{" + "{bv}}",
+										post: " ~~" + "~~\n"
 									}
 								}
 							},
@@ -380,7 +388,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{bv}} ~~" + "~~}}\n"
+										pre: "{" + "{bv-ip}}",
+										post: " ~~" + "~~\n"
 									}
 								}
 							},
@@ -391,7 +400,8 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{bv-av|}} ~~" + "~~}}\n"
+										pre: "{" + "{bv-av|",
+										post: "}} ~~" + "~~\n"
 									}
 								}
 							}
