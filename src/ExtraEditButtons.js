@@ -280,6 +280,17 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 					'delete': {
 						'label': 'Eliminação',
 						'tools': {
+							'er': {
+								label: 'Eliminação Rápida',
+								type: 'button',
+								icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_ER.png',
+								action: {
+									type: 'encapsulate',
+									options: {
+										pre: "{" + "{{ER|motivo|~~" + "~~}}\n"
+									}
+								}
+							},
 							'teste': {
 								label: 'Teste feito fora da caixa de areia',
 								type: 'button',
@@ -343,6 +354,44 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 									type: 'encapsulate',
 									options: {
 										pre: "{" + "{Inadequado|Conteúdo enciclopédico|[[w:]]|~~"  +"~~}}\n"
+									}
+								}
+							}
+						}
+					},
+					'welcome': {
+						'label': 'Boas-vindas',
+						'tools': {
+							'bv': {
+								label: 'Boas-vindas para usuário registrado',
+								type: 'button',
+								icon: 'http://upload.wikimedia.org/wikipedia/commons/3/30/Bv_icon.png',
+								action: {
+									type: 'encapsulate',
+									options: {
+										pre: "{" + "{bv-ip}} ~~" + "~~}}\n"
+									}
+								}
+							},
+							'bv-ip': {
+								label: 'Boas-vindas para usuário anônimo',
+								type: 'button',
+								icon: 'http://upload.wikimedia.org/wikipedia/commons/5/54/Bvip_icon.png',
+								action: {
+									type: 'encapsulate',
+									options: {
+										pre: "{" + "{bv}} ~~" + "~~}}\n"
+									}
+								}
+							},
+							'bv-av': {
+								label: 'Boas-vindas e aviso',
+								type: 'button',
+								icon: 'http://upload.wikimedia.org/wikipedia/commons/e/ec/Button_aviso.png',
+								action: {
+									type: 'encapsulate',
+									options: {
+										pre: "{" + "{bv-av|}} ~~" + "~~}}\n"
 									}
 								}
 							}
