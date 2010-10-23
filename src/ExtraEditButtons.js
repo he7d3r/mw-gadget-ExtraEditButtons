@@ -376,7 +376,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{bv}}",
+										pre: "{" + "{subst:bv}}",
 										post: " ~~" + "~~\n"
 									}
 								}
@@ -388,7 +388,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{bv-ip}}",
+										pre: "{" + "{subst:bv-ip}}",
 										post: " ~~" + "~~\n"
 									}
 								}
@@ -400,7 +400,7 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 								action: {
 									type: 'encapsulate',
 									options: {
-										pre: "{" + "{bv-av|",
+										pre: "{" + "{subst:bv-av|",
 										post: "}} ~~" + "~~\n"
 									}
 								}
