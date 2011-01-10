@@ -1,251 +1,361 @@
-if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
-	$j(document).ready( function() {
-		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
-			'sections': {
-				'imagens': {
-					'type': 'toolbar',
-					'label': 'Imagens'
-				}
-			}
-		} );
-
-		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
-			'section': 'advanced',
-			'group': 'format',
+if('undefined' === typeof $j.fn.wikiEditor) {
+	addOnloadHook(function () { jsMsg('O objeto $j.fn.wikiEditor não está definido!'); });
+}
+$j(document).ready( function() {
+	var edit = $j( '#wpTextbox1' );
+	if ( /^Helder\.wiki(\.bot)?$/.test( wgUserName ) ) {
+		edit.wikiEditor( 'removeFromToolbar', { 'section': 'main', 'group': 'insert', 'tool': 'linkCGD' } )
+		.wikiEditor( 'removeFromToolbar', { 'section': 'main', 'group': 'insert', 'tool': 'signature' } )
+		.wikiEditor( 'removeFromToolbar', { 'section': 'help' } )
+		.wikiEditor( 'removeFromToolbar', { 'section': 'advanced', 'group': 'format', 'tool': 'newline' } )
+		.wikiEditor( 'addToToolbar', {
+			'section': 'main',
+			'group': 'insert',
 			'tools': {
-				'my-code': {
-					label: 'Código',
+				'my-sign': {
+					label: 'Corrigir minha assinatura',
 					type: 'button',
-					icon: 'http://upload.wikimedia.org/wikipedia/commons/2/23/Button_code.png',
+					icon: 'http://upload.wikimedia.org/wikipedia/commons/2/27/Vector_toolbar_signature_button.png',
 					action: {
-						type: 'encapsulate',
-						options: {
-							pre: "<code>",
-							post: "</code>"
-						}
-					}
-				},
-				'my-pre': {
-					label: 'Código pré-formatado',
-					type: 'button',
-					icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3c/Button_pre.png',
-					action: {
-						type: 'encapsulate',
-						options: {
-							pre: "<pre>",
-							post: "</pre>"
-						}
-					}
-				},
-				'my-source': {
-					label: 'Código-fonte',
-					type: 'button',
-					icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d2/Button_source.png',
-					action: {
-						type: 'encapsulate',
-						options: {
-							pre: "<source lang=>",
-							post: "</source>"
-						}
-					}
-				},
-				'my-commnet': {
-					label: 'Comentário',
-					type: 'button',
-					icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3b/Comment-button-bg.png',
-					action: {
-						type: 'encapsulate',
-						options: {
-							pre: "<!-- ",
-							post: " -->"
+						type: 'callback',
+						execute: function() {
+							var proj = ( wgServer.indexOf("wikibooks") > -1) ? '' : 'b:';
+							var lang = ( "pt" === wgContentLanguage ) ? '' : 'pt:';
+							edit.text( function(index) {
+								var reOldSign = window.reOldSign || /OLDSIGNATURE/g;
+								var newSign = '[[' + proj + lang + 'User:Helder.wiki|Helder]]';
+								this.value = this.value.replace( reOldSign, newSign );
+							} );
+							$j( '#wpMinoredit' ).attr('checked', true);
+							$j( '#wpDiff' ).submit();
+							$j( '#wpSummary' ).text( 'Updating links (my user account was renamed)' );
 						}
 					}
 				}
 			}
 		} );
+	}
+	edit.wikiEditor( 'addToToolbar', {
+		'sections': {
+			'imagens': {
+				'type': 'toolbar',
+				'label': 'Imagens'
+			}
+		}
+	} )
+	.wikiEditor( 'addToToolbar', {
+		'section': 'advanced',
+		'group': 'format',
+		'tools': {
+			'my-code': {
+				label: 'Código',
+				type: 'button',
+				icon: 'http://upload.wikimedia.org/wikipedia/commons/2/23/Button_code.png',
+				action: {
+					type: 'encapsulate',
+					options: { pre: "<code>", post: "</code>" }
+				}
+			},
+			'my-pre': {
+				label: 'Código pré-formatado',
+				type: 'button',
+				icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3c/Button_pre.png',
+				action: {
+					type: 'encapsulate',
+					options: { pre: "<pre>", post: "</pre>" }
+				}
+			},
+			'my-source': {
+				label: 'Código-fonte',
+				type: 'button',
+				icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d2/Button_source.png',
+				action: {
+					type: 'encapsulate',
+					options: { pre: "<syntaxhighlight lang=>", post: "</syntaxhighlight>" }
+				}
+			},
+			'my-comment': {
+				label: 'Comentário',
+				type: 'button',
+				icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3b/Comment-button-bg.png',
+				action: {
+					type: 'encapsulate',
+					options: { pre: "<!-- ", post: " -->" }
+				}
+			}
+		}
+	} )
+	.wikiEditor( 'addToToolbar', {
+		'section': 'imagens',
+		'groups': {
+			'faces': {
+				'label': 'Carinhas',
+				'tools': {
+					'sad': {
+						label: 'Triste',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d8/Sad.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Sad.png]]" }
+						}
+					},
+					'smile': {
+						label: 'Sorriso',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/2/26/Smile.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Smile.png]]" }
+						}
+					},
+					'teeth': {
+						label: 'Sorridente',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/7/72/Teeth.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Teeth.png]]" }
+						}
+					},
+					'tongue': {
+						label: 'Levado',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c4/Tongue.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Tongue.png]]" }
+						}
+					},
+					'confused': {
+						label: 'Confuso',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/6/68/Confused.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Confused.png]]" }
+						}
+					},
+					'cry': {
+						label: 'Lágrimas',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d8/Cry.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Cry.png]]" }
+						}
+					},
+					'wink': {
+						label: 'Piscando',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9a/Wink.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Wink.png]]" }
+						}
+					},
+					'sleeping': {
+						label: 'Dormindo',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/3/38/Sleeping.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Sleeping.png|27px]]" }
+						}
+					}
+				}
+			},
+			'outras': {
+				'label': 'Outras',
+				'tools': {
+					'agree': {
+						label: 'Concordo',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c8/Button_conserver2.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Symbol support vote.svg|15px]] '''Concordo'''" }
+						}
+					},
 
-		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
-			'section': 'imagens',
+					'disagree': {
+						label: 'Discordo',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/0/00/Button_supprimer.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Symbol oppose vote.svg|15px]] '''Discordo'''" }
+						}
+					},
+					'done': {
+						label: 'Feito',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/4/4e/Button_fait2.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Yes check.svg|15px]] '''Feito'''" }
+						}
+					},
+					'comment': {
+						label: 'Comentário',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/4/4d/Button_reticence.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: "[[Image:Symbol comment vote.svg|15px]] '''Comentário'''" }
+						}
+					}
+				}
+			}
+		}
+	} )
+	.wikiEditor( 'addToToolbar', {
+		'section': 'main',
+		'group': 'insert',
+		'tools': {
+			'my-red': {
+				label: 'Texto vermelho',
+				type: 'button',
+				icon: 'http://upload.wikimedia.org/wikipedia/commons/8/8d/Button_rouge.png',
+				action: {
+					type: 'encapsulate',
+					options: { pre: '<span style="color:red">', post: "</span>" }
+				}
+			}
+		}
+	} );
+
+	if ( "http://pt.wikibooks.org" === wgServer ) {
+		edit.wikiEditor( 'addToToolbar', {
+			'sections': {
+				'admin': {
+					'type': 'toolbar',
+					'label': 'Administração'
+				}
+			}
+		} )
+		.wikiEditor( 'addToToolbar', {
+			'section': 'admin',
 			'groups': {
-				'faces': {
-					'label': 'Carinhas',
+				'delete': {
+					'label': 'Eliminação',
 					'tools': {
-						'sad': {
-							label: 'Triste',
+						'er': {
+							label: 'Eliminação Rápida',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d8/Sad.png',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_ER.png',
 							action: {
 								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Sad.png]]"
-								}
+								options: { pre: "{/**/{ER|motivo", post: "|~~" + "~~}}\n" }
 							}
 						},
-						'smile': {
-							label: 'Sorriso',
+						'teste': {
+							label: 'Teste feito fora da caixa de areia',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/2/26/Smile.png',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Wiki_test.GIF',
 							action: {
 								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Smile.png]]"
-								}
+								options: { pre: "{/**/{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])", post: "|~~" + "~~}}\n" }
 							}
 						},
-						'teeth': {
-							label: 'Sorridente',
+						'spam': {
+							label: 'SPAM',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/7/72/Teeth.png',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3d/ButtonSpam.png',
 							action: {
 								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Teeth.png]]"
-								}
+								options: { pre: "{/**/{ER|SPAM", post: "|~~" + "~~}}\n" }
 							}
 						},
-						'tongue': {
-							label: 'Levado',
+						'exer': {
+							label: 'Pedido de resolução de exercícios',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c4/Tongue.png',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_Nuvola_apps_edu_lang.png',
 							action: {
 								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Tongue.png]]"
-								}
+								options: { pre: "{/**/{ER|Pedido de resolução de exercícios", post: "|~~" + "~~}}\n" }
 							}
 						},
-						'confused': {
-							label: 'Confuso',
+						'propor': {
+							label: 'Propor eliminação da página/imagem',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/6/68/Confused.png',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9f/Button_broom3.png',
 							action: {
 								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Confused.png]]"
-								}
+								options: { pre: "{/**/{Eliminação", post: "}}\n" }
 							}
 						},
-						'cry': {
-							label: 'Lágrimas',
+						'vda': {
+							label: 'Violação dos direitos de autor',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d8/Cry.png',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/7/75/Wiki_c_copy.gif',
 							action: {
 								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Cry.png]]"
-								}
+								options: { pre: "{/**/{VDA|1=", post: "}}\n" }
 							}
 						},
-						'wink': {
-							label: 'Piscando',
+						'pedia': {
+							label: 'Inadequado: Conteúdo enciclopédico',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9a/Wink.png',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/c/cb/Button_wikipedia.png',
 							action: {
 								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Wink.png]]"
-								}
-							}
-						},
-						'sleeping': {
-							label: 'Dormindo',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/38/Sleeping.png',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Sleeping.png|27px]]"
-								}
+								options: { pre: "{/**/{Inadequado|Conteúdo enciclopédico|[[w:", post: "]]|~~" + "~~}}\n" }
 							}
 						}
 					}
 				},
-				'outras': {
-					'label': 'Outras',
+				'welcome': {
+					'label': 'Boas-vindas',
 					'tools': {
-						'agree': {
-							label: 'Concordo',
+						'bv': {
+							label: 'Boas-vindas para usuário registrado',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c8/Button_conserver2.png',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/30/Bv_icon.png',
 							action: {
 								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Symbol support vote.svg|15px]] '''Concordo'''"
-								}
+								options: { pre: "{/**/{subst:bv}}", post: " ~~" + "~~\n" }
 							}
 						},
-
-						'disagree': {
-							label: 'Discordo',
+						'bv-ip': {
+							label: 'Boas-vindas para usuário anônimo',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/0/00/Button_supprimer.png',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/5/54/Bvip_icon.png',
 							action: {
 								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Symbol oppose vote.svg|15px]] '''Discordo'''"
-								}
+								options: { pre: "{/**/{subst:bv-ip}}", post: " ~~" + "~~\n" }
 							}
 						},
-						'done': {
-							label: 'Feito',
+						'bv-av': {
+							label: 'Boas-vindas e aviso',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/4/4e/Button_fait2.png',
+							icon: 'http://upload.wikimedia.org/wikipedia/commons/e/ec/Button_aviso.png',
 							action: {
 								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Yes check.svg|15px]] '''Feito'''"
-								}
-							}
-						},
-						'comment': {
-							label: 'Comentário',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/4/4d/Button_reticence.png',
-							action: {
-								type: 'encapsulate',
-								options: {
-									pre: "[[Image:Symbol comment vote.svg|15px]] '''Comentário'''"
-								}
+								options: { pre: "{/**/{subst:bv-av|", post: "}} ~~" + "~~\n" }
 							}
 						}
 					}
 				}
 			}
 		} );
-
-
-		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
+	} else {
+		edit.wikiEditor( 'addToToolbar', {
 			'section': 'main',
 			'group': 'insert',
 			'tools': {
 				'my-math': {
 					label: 'Fórmula matemática',
 					type: 'button',
-					icon: 'http://bits.wikimedia.org/skins-1.5/common/images/button_math.png',
+					icon: 'http://upload.wikimedia.org/wikipedia/commons/7/7d/Button_equation_he.png',
 					action: {
 						type: 'encapsulate',
-						options: {
-							pre: "<math>",
-							post: "</math>"
-						}
-					}
-				},
-				'my-red': {
-					label: 'Texto vermelho',
-					type: 'button',
-					icon: 'http://upload.wikimedia.org/wikipedia/commons/8/8d/Button_rouge.png',
-					action: {
-						type: 'encapsulate',
-						options: {
-							pre: '<span style="color:red">',
-							post: "</span>"
-						}
+						options: { pre: "<math>", post: "</math>" }
 					}
 				}
 			}
-		} );
-
-		$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
+		} )
+		.wikiEditor( 'addToToolbar', {
 			'section': 'main',
 			'group': 'format',
 			'tools': {
@@ -255,160 +365,10 @@ if ( typeof $j != 'undefined' && typeof $j.fn.wikiEditor != 'undefined' ) {
 					icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c9/Button_strike.png',
 					action: {
 						type: 'encapsulate',
-						options: {
-							pre: "<s>",
-							post: "</s>"
-						}
+						options: { pre: "<s>", post: "</s>" }
 					}
 				}
 			}
 		} );
-
-		if ( "http://pt.wikibooks.org" == wgServer) {
-			$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
-				'sections': {
-					'admin': {
-						'type': 'toolbar',
-						'label': 'Administração'
-					}
-				}
-			} );
-
-			$j( '#wpTextbox1' ).wikiEditor( 'addToToolbar', {
-				'section': 'admin',
-				'groups': {
-					'delete': {
-						'label': 'Eliminação',
-						'tools': {
-							'er': {
-								label: 'Eliminação Rápida',
-								type: 'button',
-								icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_ER.png',
-								action: {
-									type: 'encapsulate',
-									options: {
-										pre: "{" + "{ER|motivo",
-										post: "|~~" + "~~}}\n"
-									}
-								}
-							},
-							'teste': {
-								label: 'Teste feito fora da caixa de areia',
-								type: 'button',
-								icon: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Wiki_test.GIF',
-								action: {
-									type: 'encapsulate',
-									options: {
-										pre: "{" + "{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])",
-										post: "|~~" + "~~}}\n"
-									}
-								}
-							},
-							'spam': {
-								label: 'SPAM',
-								type: 'button',
-								icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3d/ButtonSpam.png',
-								action: {
-									type: 'encapsulate',
-									options: {
-										pre: "{" + "{ER|SPAM",
-										post: "|~~" + "~~}}\n"
-									}
-								}
-							},
-							'exer': {
-								label: 'Pedido de resolução de exercícios',
-								type: 'button',
-								icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_Nuvola_apps_edu_lang.png',
-								action: {
-									type: 'encapsulate',
-									options: {
-										pre: "{" + "{ER|Pedido de resolução de exercícios",
-										post: "|~~" + "~~}}\n"
-									}
-								}
-							},
-							'propor': {
-								label: 'Propor eliminação da página/imagem',
-								type: 'button',
-								icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9f/Button_broom3.png',
-								action: {
-									type: 'encapsulate',
-									options: {
-										pre: "{" + "{Eliminação",
-										post: "}}\n"
-									}
-								}
-							},
-							'vda': {
-								label: 'Violação dos direitos de autor',
-								type: 'button',
-								icon: 'http://upload.wikimedia.org/wikipedia/commons/7/75/Wiki_c_copy.gif',
-								action: {
-									type: 'encapsulate',
-									options: {
-										pre: "{" + "{VDA|1=",
-										post: "}}\n"
-									}
-								}
-							},
-							'pedia': {
-								label: 'Inadequado: Conteúdo enciclopédico',
-								type: 'button',
-								icon: 'http://upload.wikimedia.org/wikipedia/commons/c/cb/Button_wikipedia.png',
-								action: {
-									type: 'encapsulate',
-									options: {
-										pre: "{" + "{Inadequado|Conteúdo enciclopédico|[[w:",
-										post: "]]|~~" + "~~}}\n"
-									}
-								}
-							}
-						}
-					},
-					'welcome': {
-						'label': 'Boas-vindas',
-						'tools': {
-							'bv': {
-								label: 'Boas-vindas para usuário registrado',
-								type: 'button',
-								icon: 'http://upload.wikimedia.org/wikipedia/commons/3/30/Bv_icon.png',
-								action: {
-									type: 'encapsulate',
-									options: {
-										pre: "{" + "{subst:bv}}",
-										post: " ~~" + "~~\n"
-									}
-								}
-							},
-							'bv-ip': {
-								label: 'Boas-vindas para usuário anônimo',
-								type: 'button',
-								icon: 'http://upload.wikimedia.org/wikipedia/commons/5/54/Bvip_icon.png',
-								action: {
-									type: 'encapsulate',
-									options: {
-										pre: "{" + "{subst:bv-ip}}",
-										post: " ~~" + "~~\n"
-									}
-								}
-							},
-							'bv-av': {
-								label: 'Boas-vindas e aviso',
-								type: 'button',
-								icon: 'http://upload.wikimedia.org/wikipedia/commons/e/ec/Button_aviso.png',
-								action: {
-									type: 'encapsulate',
-									options: {
-										pre: "{" + "{subst:bv-av|",
-										post: "}} ~~" + "~~\n"
-									}
-								}
-							}
-						}
-					}
-				}
-			} );
-		}
-	} );
-}
+	}
+} );
