@@ -21,6 +21,7 @@ $j(document).ready( function() {
 						execute: function() {
 							var proj = ( wgServer.indexOf("wikibooks") > -1) ? '' : 'b:';
 							var lang = ( "pt" === wgContentLanguage ) ? '' : 'pt:';
+							if ( !proj && lang ) proj = ':';
 							edit.text( function(index) {
 								var reOldSign = window.reOldSign || /OLDSIGNATURE/g;
 								var newSign = '[[' + proj + lang + 'User:Helder.wiki|Helder]]';
