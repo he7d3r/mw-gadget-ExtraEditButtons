@@ -29,7 +29,7 @@ $j(document).ready( function() {
 							} );
 							$j( '#wpMinoredit' ).attr('checked', true);
 							$j( '#wpDiff' ).submit();
-							$j( '#wpSummary' ).text( 'Updating links (my user account was renamed)' );
+							$j( '#wpSummary' ).text( 'Fixing links (my user account was renamed)' );
 						}
 					}
 				}
