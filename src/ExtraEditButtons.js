@@ -247,7 +247,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_ER.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{/**/{ER|motivo", post: "|~~" + "~~}}\n" }
+								options: { pre: "{\{ER|motivo", post: "|~~" + "~~}}\n" }
 							}
 						},
 						'teste': {
@@ -256,7 +256,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Wiki_test.GIF',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{/**/{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])", post: "|~~" + "~~}}\n" }
+								options: { pre: "{\{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])", post: "|~~" + "~~}}\n" }
 							}
 						},
 						'spam': {
@@ -265,7 +265,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3d/ButtonSpam.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{/**/{ER|SPAM", post: "|~~" + "~~}}\n" }
+								options: { pre: "{\{ER|SPAM", post: "|~~" + "~~}}\n" }
 							}
 						},
 						'exer': {
@@ -274,7 +274,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_Nuvola_apps_edu_lang.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{/**/{ER|Pedido de resolução de exercícios", post: "|~~" + "~~}}\n" }
+								options: { pre: "{\{ER|Pedido de resolução de exercícios", post: "|~~" + "~~}}\n" }
 							}
 						},
 						'propor': {
@@ -283,7 +283,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9f/Button_broom3.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{/**/{Eliminação", post: "}}\n" }
+								options: { pre: "{\{Eliminação", post: "}}\n" }
 							}
 						},
 						'vda': {
@@ -292,7 +292,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/7/75/Wiki_c_copy.gif',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{/**/{VDA|1=", post: "}}\n" }
+								options: { pre: "{\{VDA|1=", post: "}}\n" }
 							}
 						},
 						'pedia': {
@@ -301,7 +301,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/c/cb/Button_wikipedia.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{/**/{Inadequado|Conteúdo enciclopédico|[[w:", post: "]]|~~" + "~~}}\n" }
+								options: { pre: "{\{Inadequado|Conteúdo enciclopédico|[[w:", post: "]]|~~" + "~~}}\n" }
 							}
 						}
 					}
@@ -315,7 +315,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/30/Bv_icon.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{/**/{subst:bv}}", post: " ~~" + "~~\n" }
+								options: { pre: "{\{subst:bv}}", post: " ~~" + "~~\n" }
 							}
 						},
 						'bv-ip': {
@@ -324,7 +324,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/5/54/Bvip_icon.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{/**/{subst:bv-ip}}", post: " ~~" + "~~\n" }
+								options: { pre: "{\{subst:bv-ip}}", post: " ~~" + "~~\n" }
 							}
 						},
 						'bv-av': {
@@ -333,7 +333,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/e/ec/Button_aviso.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{/**/{subst:bv-av|", post: "}} ~~" + "~~\n" }
+								options: { pre: "{\{subst:bv-av|", post: "}} ~~" + "~~\n" }
 							}
 						}
 					}
