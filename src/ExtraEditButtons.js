@@ -28,8 +28,8 @@ $j(document).ready( function() {
 								this.value = this.value.replace( reOldSign, newSign );
 							} );
 							$j( '#wpMinoredit' ).attr('checked', true);
+							$j( '#wpSummary' ).val( 'Fixing links (my user account was renamed)' );
 							$j( '#wpDiff' ).submit();
-							$j( '#wpSummary' ).text( 'Fixing links (my user account was renamed)' );
 						}
 					}
 				}
