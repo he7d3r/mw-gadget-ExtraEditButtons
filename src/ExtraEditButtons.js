@@ -19,8 +19,8 @@ $j(document).ready( function() {
 					action: {
 						type: 'callback',
 						execute: function() {
-							var proj = ( wgServer.indexOf("wikibooks") > -1) ? '' : 'b:';
-							var lang = ( "pt" === wgContentLanguage ) ? '' : 'pt:';
+							var proj = ( wgServer.indexOf('wikibooks') > -1) ? '' : 'b:';
+							var lang = ( 'pt' === wgContentLanguage ) ? '' : 'pt:';
 							if ( !proj && lang ) proj = ':';
 							edit.text( function(index) {
 								var reOldSign = window.reOldSign || /OLDSIGNATURE/g;
@@ -54,7 +54,7 @@ $j(document).ready( function() {
 				icon: 'http://upload.wikimedia.org/wikipedia/commons/2/23/Button_code.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: "<code>", post: "</code>" }
+					options: { pre: '<code>', post: '</code>' }
 				}
 			},
 			'my-pre': {
@@ -63,7 +63,7 @@ $j(document).ready( function() {
 				icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3c/Button_pre.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: "<pre>", post: "</pre>" }
+					options: { pre: '<pre>', post: '</pre>' }
 				}
 			},
 			'my-source': {
@@ -72,7 +72,7 @@ $j(document).ready( function() {
 				icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d2/Button_source.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: "<syntaxhighlight lang=>", post: "</syntaxhighlight>" }
+					options: { pre: '<syntaxhighlight lang="javascript">', post: '</syntaxhighlight>' }
 				}
 			},
 			'my-comment': {
@@ -81,7 +81,7 @@ $j(document).ready( function() {
 				icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3b/Comment-button-bg.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: "<!-- ", post: " -->" }
+					options: { pre: '<!-- ', post: ' -->' }
 				}
 			}
 		}
@@ -98,7 +98,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d8/Sad.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Sad.png]]" }
+							options: { pre: '[[Image:Sad.png]]' }
 						}
 					},
 					'smile': {
@@ -107,7 +107,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/2/26/Smile.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Smile.png]]" }
+							options: { pre: '[[Image:Smile.png]]' }
 						}
 					},
 					'teeth': {
@@ -116,7 +116,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/7/72/Teeth.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Teeth.png]]" }
+							options: { pre: '[[Image:Teeth.png]]' }
 						}
 					},
 					'tongue': {
@@ -125,7 +125,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c4/Tongue.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Tongue.png]]" }
+							options: { pre: '[[Image:Tongue.png]]' }
 						}
 					},
 					'confused': {
@@ -134,7 +134,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/6/68/Confused.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Confused.png]]" }
+							options: { pre: '[[Image:Confused.png]]' }
 						}
 					},
 					'cry': {
@@ -143,7 +143,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d8/Cry.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Cry.png]]" }
+							options: { pre: '[[Image:Cry.png]]' }
 						}
 					},
 					'wink': {
@@ -152,7 +152,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9a/Wink.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Wink.png]]" }
+							options: { pre: '[[Image:Wink.png]]' }
 						}
 					},
 					'sleeping': {
@@ -161,7 +161,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/3/38/Sleeping.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Sleeping.png|27px]]" }
+							options: { pre: '[[Image:Sleeping.png|27px]]' }
 						}
 					}
 				}
@@ -175,7 +175,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c8/Button_conserver2.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Symbol support vote.svg|15px]] '''Concordo'''" }
+							options: { pre: '[[Image:Symbol support vote.svg|15px]] \'\'\'Concordo\'\'\'' }
 						}
 					},
 
@@ -185,7 +185,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/0/00/Button_supprimer.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Symbol oppose vote.svg|15px]] '''Discordo'''" }
+							options: { pre: '[[Image:Symbol oppose vote.svg|15px]] \'\'\'Discordo\'\'\'' }
 						}
 					},
 					'done': {
@@ -194,7 +194,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/4/4e/Button_fait2.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Yes check.svg|15px]] '''Feito'''" }
+							options: { pre: '[[Image:Yes check.svg|15px]] \'\'\'Feito\'\'\'' }
 						}
 					},
 					'comment': {
@@ -203,7 +203,7 @@ $j(document).ready( function() {
 						icon: 'http://upload.wikimedia.org/wikipedia/commons/4/4d/Button_reticence.png',
 						action: {
 							type: 'encapsulate',
-							options: { pre: "[[Image:Symbol comment vote.svg|15px]] '''Comentário'''" }
+							options: { pre: '[[Image:Symbol comment vote.svg|15px]] \'\'\'Comentário\'\'\'' }
 						}
 					}
 				}
@@ -220,13 +220,13 @@ $j(document).ready( function() {
 				icon: 'http://upload.wikimedia.org/wikipedia/commons/8/8d/Button_rouge.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: '<span style="color:red">', post: "</span>" }
+					options: { pre: '<span style="color:red">', post: '</span>' }
 				}
 			}
 		}
 	} );
 
-	if ( "http://pt.wikibooks.org" === wgServer ) {
+	if ( 'Wikilivros' === wgSiteName ) {
 		edit.wikiEditor( 'addToToolbar', {
 			'sections': {
 				'admin': {
@@ -247,7 +247,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_ER.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{\{ER|motivo", post: "|~~" + "~~}}\n" }
+								options: { pre: '{\{ER|motivo', post: '|~~' + '~~\}}\n' }
 							}
 						},
 						'teste': {
@@ -256,7 +256,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Wiki_test.GIF',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{\{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])", post: "|~~" + "~~}}\n" }
+								options: { pre: '{\{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])', post: '|~~' + '~~}\}\n' }
 							}
 						},
 						'spam': {
@@ -265,7 +265,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3d/ButtonSpam.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{\{ER|SPAM", post: "|~~" + "~~}}\n" }
+								options: { pre: '{\{ER|Propaganda ou SPAM', post: '|~~' + '~~}\}\n' }
 							}
 						},
 						'exer': {
@@ -274,7 +274,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_Nuvola_apps_edu_lang.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{\{ER|Pedido de resolução de exercícios", post: "|~~" + "~~}}\n" }
+								options: { pre: '{\{ER|Pedido de resolução de exercícios', post: '|~~' + '~~}\}\n' }
 							}
 						},
 						'propor': {
@@ -283,7 +283,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9f/Button_broom3.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{\{Eliminação", post: "}}\n" }
+								options: { pre: '{\{Eliminação', post: '}\}\n' }
 							}
 						},
 						'vda': {
@@ -292,7 +292,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/7/75/Wiki_c_copy.gif',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{\{VDA|1=", post: "}}\n" }
+								options: { pre: '{\{VDA|1=', post: '}\}\n' }
 							}
 						},
 						'pedia': {
@@ -301,7 +301,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/c/cb/Button_wikipedia.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{\{Inadequado|Conteúdo enciclopédico|[[w:", post: "]]|~~" + "~~}}\n" }
+								options: { pre: '{\{Inadequado|Conteúdo enciclopédico|[[w:', post: ']]|~~' + '~~}\}\n' }
 							}
 						}
 					}
@@ -315,7 +315,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/30/Bv_icon.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{\{subst:bv}}", post: " ~~" + "~~\n" }
+								options: { pre: '{\{subst:bv}\}', post: ' ~~' + '~~\n' }
 							}
 						},
 						'bv-ip': {
@@ -324,7 +324,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/5/54/Bvip_icon.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{\{subst:bv-ip}}", post: " ~~" + "~~\n" }
+								options: { pre: '{\{subst:bv-ip}\}', post: ' ~~' + '~~\n' }
 							}
 						},
 						'bv-av': {
@@ -333,7 +333,7 @@ $j(document).ready( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/e/ec/Button_aviso.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: "{\{subst:bv-av|", post: "}} ~~" + "~~\n" }
+								options: { pre: '{\{subst:bv-av|', post: '}\} ~~' + '~~\n' }
 							}
 						}
 					}
@@ -351,7 +351,7 @@ $j(document).ready( function() {
 					icon: 'http://upload.wikimedia.org/wikipedia/commons/7/7d/Button_equation_he.png',
 					action: {
 						type: 'encapsulate',
-						options: { pre: "<math>", post: "</math>" }
+						options: { pre: '<math>', post: '</math>' }
 					}
 				}
 			}
@@ -366,7 +366,7 @@ $j(document).ready( function() {
 					icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c9/Button_strike.png',
 					action: {
 						type: 'encapsulate',
-						options: { pre: "<s>", post: "</s>" }
+						options: { pre: '<s>', post: '</s>' }
 					}
 				}
 			}
