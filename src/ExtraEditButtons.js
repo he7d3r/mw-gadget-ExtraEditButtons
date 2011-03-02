@@ -1,10 +1,13 @@
-if('undefined' === typeof $j.fn.wikiEditor) {
-	addOnloadHook(function () { jsMsg('O objeto $j.fn.wikiEditor não está definido!'); });
+if('undefined' === typeof $.fn.wikiEditor) {
+	$(function () { jsMsg('O objeto $.fn.wikiEditor não está definido!'); });
 }
-$j(document).ready( function() {
-	var edit = $j( '#wpTextbox1' );
-	if ( /^Helder\.wiki(\.bot)?$/.test( wgUserName ) ) {
-		edit.wikiEditor( 'removeFromToolbar', { 'section': 'main', 'group': 'insert', 'tool': 'linkCGD' } )
+$(document).ready( function() {
+	var $edit = $( '#wpTextbox1' );
+	if( typeof $edit.wikiEditor !== 'function' ) {
+		return;
+	}
+	if ( /^Helder\.wiki(\.bot)?$/.test( mw.config.get( 'wgUserName' ) ) ) {
+		$edit.wikiEditor( 'removeFromToolbar', { 'section': 'main', 'group': 'insert', 'tool': 'linkCGD' } )
 		.wikiEditor( 'removeFromToolbar', { 'section': 'main', 'group': 'insert', 'tool': 'signature' } )
 		.wikiEditor( 'removeFromToolbar', { 'section': 'help' } )
 		.wikiEditor( 'removeFromToolbar', { 'section': 'advanced', 'group': 'format', 'tool': 'newline' } )
@@ -19,24 +22,24 @@ $j(document).ready( function() {
 					action: {
 						type: 'callback',
 						execute: function() {
-							var proj = ( wgServer.indexOf('wikibooks') > -1) ? '' : 'b:';
-							var lang = ( 'pt' === wgContentLanguage ) ? '' : 'pt:';
+							var proj = ( mw.config.get( 'wgServer' ).indexOf('wikibooks') > -1) ? '' : 'b:';
+							var lang = ( 'pt' === mw.config.get( 'wgContentLanguage' ) ) ? '' : 'pt:';
 							if ( !proj && lang ) proj = ':';
-							edit.text( function(index) {
+							$edit.text( function(index) {
 								var reOldSign = window.reOldSign || /OLDSIGNATURE/g;
 								var newSign = '[[' + proj + lang + 'User:Helder.wiki|Helder]]';
 								this.value = this.value.replace( reOldSign, newSign );
 							} );
-							$j( '#wpMinoredit' ).attr('checked', true);
-							$j( '#wpSummary' ).val( 'Fixing links (my user account was renamed)' );
-							$j( '#wpDiff' ).submit();
+							$( '#wpMinoredit' ).attr('checked', true);
+							$( '#wpSummary' ).val( 'Fixing links (my user account was renamed)' );
+							$( '#wpDiff' ).submit();
 						}
 					}
 				}
 			}
 		} );
 	}
-	edit.wikiEditor( 'addToToolbar', {
+	$edit.wikiEditor( 'addToToolbar', {
 		'sections': {
 			'imagens': {
 				'type': 'toolbar',
@@ -226,8 +229,8 @@ $j(document).ready( function() {
 		}
 	} );
 
-	if ( 'Wikilivros' === wgSiteName ) {
-		edit.wikiEditor( 'addToToolbar', {
+	if ( 'ptwikibooks' === mw.config.get( 'wgDBname' )  ) {
+		$edit.wikiEditor( 'addToToolbar', {
 			'sections': {
 				'admin': {
 					'type': 'toolbar',
@@ -341,7 +344,7 @@ $j(document).ready( function() {
 			}
 		} );
 	} else {
-		edit.wikiEditor( 'addToToolbar', {
+		$edit.wikiEditor( 'addToToolbar', {
 			'section': 'main',
 			'group': 'insert',
 			'tools': {
