@@ -1,7 +1,4 @@
-if('undefined' === typeof $.fn.wikiEditor) {
-	$(function () { jsMsg('O objeto $.fn.wikiEditor não está definido!'); });
-}
-$(document).ready( function() {
+$( function() {
 	var $edit = $( '#wpTextbox1' );
 	if( typeof $edit.wikiEditor !== 'function' ) {
 		return;
