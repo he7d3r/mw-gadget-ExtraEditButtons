@@ -163,6 +163,24 @@ $( function() {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Sleeping.png|27px]]' }
 						}
+					},
+					'hello': {
+						label: 'Olá!',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/f/f8/Waving.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: '[[Image:Waving.png|27px]]' }
+						}
+					},
+					'sifflote': {
+						label: 'Apito',
+						type: 'button',
+						icon: 'http://upload.wikimedia.org/wikipedia/commons/3/30/Sifflote.png',
+						action: {
+							type: 'encapsulate',
+							options: { pre: '[[Image:Sifflote.png|27px]]' }
+						}
 					}
 				}
 			},
