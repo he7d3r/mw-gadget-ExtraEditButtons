@@ -338,7 +338,7 @@ $( function() {
 									}
 								},
 								'VDA' : {
-									'label': 'Violação dos direitos de autor',
+									'label': 'Violação dos direitos de autor (VDA)',
 									'action': {
 										'type': 'encapsulate',
 										'options': {
