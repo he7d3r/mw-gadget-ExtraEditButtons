@@ -270,7 +270,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Propaganda ou SPAM}\}\n'
+											pre: '{' + '{ER|Propaganda ou SPAM}}\n'
 										}
 									}
 								},
@@ -279,7 +279,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Vandalismo}\}\n'
+											pre: '{' + '{ER|Vandalismo}}\n'
 										}
 									}
 								},
@@ -288,7 +288,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|HOAX}\}\n'
+											pre: '{' + '{ER|HOAX}}\n'
 										}
 									}
 								},
@@ -297,7 +297,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Pedido de resolução de exercícios}\}\n'
+											pre: '{' + '{ER|Pedido de resolução de exercícios}}\n'
 										}
 									}
 								},
@@ -306,7 +306,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Texto sem sentido (nonsense)}\}\n'
+											pre: '{' + '{ER|Texto sem sentido (nonsense)}}\n'
 										}
 									}
 								},
@@ -315,7 +315,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]]))}\}\n'
+											pre: '{' + '{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]]))}}\n'
 										}
 									}
 								},
@@ -324,7 +324,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Pornografia}\}\n'
+											pre: '{' + '{ER|Pornografia}}\n'
 										}
 									}
 								},
@@ -333,7 +333,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Conteúdo ofensivo}\}\n'
+											pre: '{' + '{ER|Conteúdo ofensivo}}\n'
 										}
 									}
 								},
@@ -342,8 +342,8 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{\{VDA|1=',
-											post: '}\}\n'
+											pre: '{' + '{VDA|1=',
+											post: '}}\n'
 										}
 									}
 								},
@@ -352,7 +352,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Discussão de página excluída}\}\n'
+											pre: '{' + '{ER|Discussão de página excluída}}\n'
 										}
 									}
 								},
@@ -361,7 +361,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Pedido do autor}\}\n'
+											pre: '{' + '{ER|Pedido do autor}}\n'
 										}
 									}
 								},
@@ -370,7 +370,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Período de adequação expirado}\}\n'
+											pre: '{' + '{ER|Período de adequação expirado}}\n'
 										}
 									}
 								},
@@ -379,7 +379,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Redirecionamento desnecessário}\}\n'
+											pre: '{' + '{ER|Redirecionamento desnecessário}}\n'
 										}
 									}
 								},
@@ -388,7 +388,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Redirecionamento com título inaceitável}\}\n'
+											pre: '{' + '{ER|Redirecionamento com título inaceitável}}\n'
 										}
 									}
 								},
@@ -397,7 +397,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Categoria vazia}\}\n'
+											pre: '{' + '{ER|Categoria vazia}}\n'
 										}
 									}
 								},
@@ -406,7 +406,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Categoria renomeada para [[Categoria:]]}\}\n'
+											pre: '{' + '{ER|Categoria renomeada para [[Categoria:]]}}\n'
 										}
 									}
 								},
@@ -415,7 +415,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Subpágina de usuário}\}\n'
+											pre: '{' + '{ER|Subpágina de usuário}}\n'
 										}
 									}
 								},
@@ -424,7 +424,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '\{{ER|Usuário inexistente}\}\n'
+											pre: '{' + '{ER|Usuário inexistente}}\n'
 										}
 									}
 								}
@@ -439,8 +439,8 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{\{Inadequado|Conteúdo enciclopédico não é livro didático|[[w:',
-											post: ']]|~~' + '~~}\}\n'
+											pre: '{' + '{Inadequado|Conteúdo enciclopédico não é livro didático|[[w:',
+											post: ']]|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -449,8 +449,27 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{\{Inadequado|Conteúdo enciclopédico|[[w:',
-											post: ']]|~~' + '~~}\}\n'
+											pre: '{' + '{Inadequado|Conteúdo enciclopédico|[[w:',
+											post: ']]|~~' + '~~}}\n'
+										}
+									}
+								},
+								'inadequate' : {
+									'label': 'Inadequado',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '{' + '{Inadequado|Não é um livro livro didático|',
+											post: '|~~' + '~~}}\n'
+										}
+									}
+								},
+								'rename' : {
+									'label': 'Renomear',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '{' + '{Renomear}}\n'
 										}
 									}
 								}
@@ -467,7 +486,7 @@ $( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/30/Bv_icon.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: '{\{subst:bv}\}', post: ' ~~' + '~~\n' }
+								options: { pre: '{' + '{subst:bv}}', post: ' ~~' + '~~\n' }
 							}
 						},
 						'bv-ip': {
@@ -476,7 +495,7 @@ $( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/5/54/Bvip_icon.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: '{\{subst:bv-ip}\}', post: ' ~~' + '~~\n' }
+								options: { pre: '{' + '{subst:bv-ip}}', post: ' ~~' + '~~\n' }
 							}
 						},
 						'bv-av': {
@@ -485,7 +504,7 @@ $( function() {
 							icon: 'http://upload.wikimedia.org/wikipedia/commons/e/ec/Button_aviso.png',
 							action: {
 								type: 'encapsulate',
-								options: { pre: '{\{subst:bv-av|', post: '}\} ~~' + '~~\n' }
+								options: { pre: '{' + '{subst:bv-av|', post: '}} ~~' + '~~\n' }
 							}
 						}
 					}
