@@ -1,5 +1,5 @@
 $( function() {
-	var $edit = $( '#wpTextbox1' );
+    var $edit = $( '#wpTextbox1' );
 	if( typeof $edit.wikiEditor !== 'function' ) {
 		return;
 	}
@@ -21,7 +21,9 @@ $( function() {
 						execute: function() {
 							var proj = ( mw.config.get( 'wgServer' ).indexOf('wikibooks') > -1) ? '' : 'b:';
 							var lang = ( 'pt' === mw.config.get( 'wgContentLanguage' ) ) ? '' : 'pt:';
-							if ( !proj && lang ) proj = ':';
+							if ( !proj && lang ) {
+								proj = ':';
+							}
 							$edit.text( function(index) {
 								var reOldSign = window.reOldSign || /OLDSIGNATURE/g;
 								var newSign = '[[' + proj + lang + 'User:Helder.wiki|Helder]]';
@@ -256,70 +258,202 @@ $( function() {
 		.wikiEditor( 'addToToolbar', {
 			'section': 'admin',
 			'groups': {
-				'delete': {
-					'label': 'Eliminação',
+				'tags': {
+					'label': 'Marcações',
 					'tools': {
-						'er': {
-							label: 'Eliminação Rápida',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_ER.png',
-							action: {
-								type: 'encapsulate',
-								options: { pre: '{\{ER|motivo', post: '|~~' + '~~\}}\n' }
+						'speed-deletion-heading': {
+							'label': 'Eliminação rápida',
+							'type': 'select',
+							'list': {
+								'spam' : {
+									'label': 'Propaganda ou SPAM',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Propaganda ou SPAM}\}\n'
+										}
+									}
+								},
+								'vandal' : {
+									'label': 'Vandalismo',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Vandalismo}\}\n'
+										}
+									}
+								},
+								'HOAX' : {
+									'label': 'HOAX',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|HOAX}\}\n'
+										}
+									}
+								},
+								'exercises' : {
+									'label': 'Trabalhos escolares e pedidos de resolução de exercícios',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Pedido de resolução de exercícios}\}\n'
+										}
+									}
+								},
+								'nonsense' : {
+									'label': 'Lixo ou texto sem sentido (nonsense)',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Texto sem sentido (nonsense)}\}\n'
+										}
+									}
+								},
+								'test' : {
+									'label': 'Teste',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]]))}\}\n'
+										}
+									}
+								},
+								'porn' : {
+									'label': 'Pornografia',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Pornografia}\}\n'
+										}
+									}
+								},
+								'ofensive' : {
+									'label': 'Conteúdo ofensivo',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Conteúdo ofensivo}\}\n'
+										}
+									}
+								},
+								'VDA' : {
+									'label': 'Violação dos direitos de autor',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '{\{VDA|1=',
+											post: '}\}\n'
+										}
+									}
+								},
+								'talkofdeletedpage' : {
+									'label': 'Discussão de página excluída',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Discussão de página excluída}\}\n'
+										}
+									}
+								},
+								'userreq' : {
+									'label': 'Pedido do autor',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Pedido do autor}\}\n'
+										}
+									}
+								},
+								'expired' : {
+									'label': 'Período de adequação expirado',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Período de adequação expirado}\}\n'
+										}
+									}
+								},
+								'unnecessaryredir' : {
+									'label': 'Redirecionamento desnecessário',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Redirecionamento desnecessário}\}\n'
+										}
+									}
+								},
+								'badredirect' : {
+									'label': 'Redirecionamento com título inaceitável',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Redirecionamento com título inaceitável}\}\n'
+										}
+									}
+								},
+								'emptycat' : {
+									'label': 'Categoria vazia',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Categoria vazia}\}\n'
+										}
+									}
+								},
+								'renamedcat' : {
+									'label': 'Categoria renomeada',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Categoria renomeada para [[Categoria:]]}\}\n'
+										}
+									}
+								},
+								'usersubpage' : {
+									'label': 'Subpágina de usuário',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Subpágina de usuário}\}\n'
+										}
+									}
+								},
+								'inexistentuser' : {
+									'label': 'Usuário inexistente',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '\{{ER|Usuário inexistente}\}\n'
+										}
+									}
+								}
 							}
 						},
-						'teste': {
-							label: 'Teste feito fora da caixa de areia',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Wiki_test.GIF',
-							action: {
-								type: 'encapsulate',
-								options: { pre: '{\{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]])', post: '|~~' + '~~}\}\n' }
-							}
-						},
-						'spam': {
-							label: 'SPAM',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3d/ButtonSpam.png',
-							action: {
-								type: 'encapsulate',
-								options: { pre: '{\{ER|Propaganda ou SPAM', post: '|~~' + '~~}\}\n' }
-							}
-						},
-						'exer': {
-							label: 'Pedido de resolução de exercícios',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/1/11/Button_Nuvola_apps_edu_lang.png',
-							action: {
-								type: 'encapsulate',
-								options: { pre: '{\{ER|Pedido de resolução de exercícios', post: '|~~' + '~~}\}\n' }
-							}
-						},
-						'propor': {
-							label: 'Propor eliminação da página/imagem',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9f/Button_broom3.png',
-							action: {
-								type: 'encapsulate',
-								options: { pre: '{\{Eliminação', post: '}\}\n' }
-							}
-						},
-						'vda': {
-							label: 'Violação dos direitos de autor',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/7/75/Wiki_c_copy.gif',
-							action: {
-								type: 'encapsulate',
-								options: { pre: '{\{VDA|1=', post: '}\}\n' }
-							}
-						},
-						'pedia': {
-							label: 'Inadequado: Conteúdo enciclopédico',
-							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/c/cb/Button_wikipedia.png',
-							action: {
-								type: 'encapsulate',
-								options: { pre: '{\{Inadequado|Conteúdo enciclopédico|[[w:', post: ']]|~~' + '~~}\}\n' }
+						'othertags-heading': {
+							'label': 'Outras',
+							'type': 'select',
+							'list': {
+								'wikipedia' : {
+									'label': 'Conteúdo enciclopédico',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '{\{Inadequado|Conteúdo enciclopédico não é livro didático|[[w:',
+											post: ']]|~~' + '~~}\}\n'
+										}
+									}
+								},
+								'deletionrequest' : {
+									'label': 'Propor eliminação por votação',
+									'action': {
+										'type': 'encapsulate',
+										'options': {
+											pre: '{\{Inadequado|Conteúdo enciclopédico|[[w:',
+											post: ']]|~~' + '~~}\}\n'
+										}
+									}
+								}
 							}
 						}
 					}
