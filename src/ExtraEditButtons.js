@@ -449,8 +449,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{Inadequado|Conteúdo enciclopédico|[[w:',
-											post: ']]|~~' + '~~}}\n'
+											pre: '{' + '{eliminação}}\n'
 										}
 									}
 								},
