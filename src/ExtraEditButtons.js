@@ -251,7 +251,7 @@ $( function() {
 			'sections': {
 				'admin': {
 					'type': 'toolbar',
-					'label': 'Administração'
+					'label': 'Manutenção'
 				}
 			}
 		} )
@@ -270,7 +270,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Propaganda ou SPAM}}\n'
+											pre: '{' + '{ER|Propaganda ou SPAM|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -279,7 +279,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Vandalismo}}\n'
+											pre: '{' + '{ER|Vandalismo|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -297,7 +297,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Pedido de resolução de exercícios}}\n'
+											pre: '{' + '{ER|Pedido de resolução de exercícios|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -306,7 +306,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Texto sem sentido (nonsense)}}\n'
+											pre: '{' + '{ER|Texto sem sentido (nonsense)|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -315,7 +315,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Teste feito fora da página adequada ([[Wikilivros:Caixa de areia]]))}}\n'
+											pre: '{' + '{ER|Teste feito fora da [[Wikilivros:Caixa de areia|página adequada]]|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -324,7 +324,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Pornografia}}\n'
+											pre: '{' + '{ER|Pornografia|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -333,7 +333,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Conteúdo ofensivo}}\n'
+											pre: '{' + '{ER|Conteúdo ofensivo|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -352,7 +352,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Discussão de página excluída}}\n'
+											pre: '{' + '{ER|Discussão de página excluída|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -370,7 +370,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Período de adequação expirado}}\n'
+											pre: '{' + '{ER|Período de adequação expirado|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -379,7 +379,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Redirecionamento desnecessário}}\n'
+											pre: '{' + '{ER|Redirecionamento desnecessário|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -388,7 +388,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Redirecionamento com título inaceitável}}\n'
+											pre: '{' + '{ER|Redirecionamento com título inaceitável|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -397,7 +397,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Categoria vazia}}\n'
+											pre: '{' + '{ER|Categoria vazia|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -406,7 +406,8 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Categoria renomeada para [[Categoria:]]}}\n'
+											pre: '{' + '{ER|Categoria renomeada para [[Categoria:',
+                                            post: ']]|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -415,7 +416,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Subpágina de usuário}}\n'
+											pre: '{' + '{ER|Subpágina de usuário|~~' + '~~}}\n'
 										}
 									}
 								},
@@ -424,7 +425,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{ER|Usuário inexistente}}\n'
+											pre: '{' + '{ER|Usuário inexistente|~~' + '~~}}\n'
 										}
 									}
 								}
@@ -439,7 +440,7 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{Inadequado|Conteúdo enciclopédico não é livro didático|[[w:',
+											pre: '{' + '{Inadequado|Conteúdo enciclopédico não é livro didático|[[w:{' + '{subst:PAGENAME}}',
 											post: ']]|~~' + '~~}}\n'
 										}
 									}
