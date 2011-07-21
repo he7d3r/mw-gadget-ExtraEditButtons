@@ -74,7 +74,7 @@ $( function() {
 				icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d2/Button_source.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: '<syntaxhighlight lang="javascript">', post: '</syntaxhighlight>' }
+					options: { pre: '<syntaxhighlight lang="javascript" enclose="pre">\n', post: '\n</syntaxhighlight>' }
 				}
 			},
 			'my-comment': {
@@ -240,7 +240,7 @@ $( function() {
 				icon: 'http://upload.wikimedia.org/wikipedia/commons/8/8d/Button_rouge.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: '<span style="color:red">', post: '</span>' }
+					options: { pre: '<span style="color:red;">', post: '</span>' }
 				}
 			}
 		}
