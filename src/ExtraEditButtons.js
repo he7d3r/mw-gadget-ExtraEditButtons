@@ -15,7 +15,7 @@ $( function() {
 				'my-sign': {
 					label: 'Corrigir minha assinatura',
 					type: 'button',
-					icon: 'http://upload.wikimedia.org/wikipedia/commons/2/27/Vector_toolbar_signature_button.png',
+					icon: '//upload.wikimedia.org/wikipedia/commons/2/27/Vector_toolbar_signature_button.png',
 					action: {
 						type: 'callback',
 						execute: function() {
@@ -53,7 +53,7 @@ $( function() {
 			'my-code': {
 				label: 'Código',
 				type: 'button',
-				icon: 'http://upload.wikimedia.org/wikipedia/commons/2/23/Button_code.png',
+				icon: '//upload.wikimedia.org/wikipedia/commons/2/23/Button_code.png',
 				action: {
 					type: 'encapsulate',
 					options: { pre: '<code>', post: '</code>' }
@@ -62,7 +62,7 @@ $( function() {
 			'my-pre': {
 				label: 'Código pré-formatado',
 				type: 'button',
-				icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3c/Button_pre.png',
+				icon: '//upload.wikimedia.org/wikipedia/commons/3/3c/Button_pre.png',
 				action: {
 					type: 'encapsulate',
 					options: { pre: '<pre>', post: '</pre>' }
@@ -71,7 +71,7 @@ $( function() {
 			'my-source': {
 				label: 'Código-fonte',
 				type: 'button',
-				icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d2/Button_source.png',
+				icon: '//upload.wikimedia.org/wikipedia/commons/d/d2/Button_source.png',
 				action: {
 					type: 'encapsulate',
 					options: { pre: '<syntaxhighlight lang="javascript" enclose="pre">\n', post: '\n</syntaxhighlight>' }
@@ -80,7 +80,7 @@ $( function() {
 			'my-comment': {
 				label: 'Comentário',
 				type: 'button',
-				icon: 'http://upload.wikimedia.org/wikipedia/commons/3/3b/Comment-button-bg.png',
+				icon: '//upload.wikimedia.org/wikipedia/commons/3/3b/Comment-button-bg.png',
 				action: {
 					type: 'encapsulate',
 					options: { pre: '<!-- ', post: ' -->' }
@@ -97,7 +97,7 @@ $( function() {
 					'sad': {
 						label: 'Triste',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d8/Sad.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/d/d8/Sad.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Sad.png]]' }
@@ -106,7 +106,7 @@ $( function() {
 					'smile': {
 						label: 'Sorriso',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/2/26/Smile.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/2/26/Smile.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Smile.png]]' }
@@ -115,7 +115,7 @@ $( function() {
 					'teeth': {
 						label: 'Sorridente',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/7/72/Teeth.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/7/72/Teeth.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Teeth.png]]' }
@@ -124,7 +124,7 @@ $( function() {
 					'tongue': {
 						label: 'Levado',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c4/Tongue.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/c/c4/Tongue.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Tongue.png]]' }
@@ -133,7 +133,7 @@ $( function() {
 					'confused': {
 						label: 'Confuso',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/6/68/Confused.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/6/68/Confused.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Confused.png]]' }
@@ -142,7 +142,7 @@ $( function() {
 					'cry': {
 						label: 'Lágrimas',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/d/d8/Cry.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/d/d8/Cry.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Cry.png]]' }
@@ -151,7 +151,7 @@ $( function() {
 					'wink': {
 						label: 'Piscando',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/9/9a/Wink.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/9/9a/Wink.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Wink.png]]' }
@@ -160,7 +160,7 @@ $( function() {
 					'sleeping': {
 						label: 'Dormindo',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/3/38/Sleeping.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/3/38/Sleeping.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Sleeping.png|27px]]' }
@@ -169,7 +169,7 @@ $( function() {
 					'hello': {
 						label: 'Olá!',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/f/f8/Waving.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/f/f8/Waving.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Waving.png|27px]]' }
@@ -178,7 +178,7 @@ $( function() {
 					'sifflote': {
 						label: 'Apito',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/3/30/Sifflote.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/3/30/Sifflote.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Sifflote.png|27px]]' }
@@ -192,7 +192,7 @@ $( function() {
 					'agree': {
 						label: 'Concordo',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c8/Button_conserver2.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/c/c8/Button_conserver2.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Symbol support vote.svg|15px]] \'\'\'Concordo\'\'\'' }
@@ -202,7 +202,7 @@ $( function() {
 					'disagree': {
 						label: 'Discordo',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/0/00/Button_supprimer.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/0/00/Button_supprimer.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Symbol oppose vote.svg|15px]] \'\'\'Discordo\'\'\'' }
@@ -211,7 +211,7 @@ $( function() {
 					'done': {
 						label: 'Feito',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/4/4e/Button_fait2.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/4/4e/Button_fait2.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Yes check.svg|15px]] \'\'\'Feito\'\'\'' }
@@ -220,7 +220,7 @@ $( function() {
 					'comment': {
 						label: 'Comentário',
 						type: 'button',
-						icon: 'http://upload.wikimedia.org/wikipedia/commons/4/4d/Button_reticence.png',
+						icon: '//upload.wikimedia.org/wikipedia/commons/4/4d/Button_reticence.png',
 						action: {
 							type: 'encapsulate',
 							options: { pre: '[[Image:Symbol comment vote.svg|15px]] \'\'\'Comentário\'\'\'' }
@@ -237,7 +237,7 @@ $( function() {
 			'my-red': {
 				label: 'Texto vermelho',
 				type: 'button',
-				icon: 'http://upload.wikimedia.org/wikipedia/commons/8/8d/Button_rouge.png',
+				icon: '//upload.wikimedia.org/wikipedia/commons/8/8d/Button_rouge.png',
 				action: {
 					type: 'encapsulate',
 					options: { pre: '<span style="color:red;">', post: '</span>' }
@@ -483,7 +483,7 @@ $( function() {
 						'bv': {
 							label: 'Boas-vindas para usuário registrado',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/3/30/Bv_icon.png',
+							icon: '//upload.wikimedia.org/wikipedia/commons/3/30/Bv_icon.png',
 							action: {
 								type: 'encapsulate',
 								options: { pre: '{' + '{subst:bv}}', post: ' ~~' + '~~\n' }
@@ -492,7 +492,7 @@ $( function() {
 						'bv-ip': {
 							label: 'Boas-vindas para usuário anônimo',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/5/54/Bvip_icon.png',
+							icon: '//upload.wikimedia.org/wikipedia/commons/5/54/Bvip_icon.png',
 							action: {
 								type: 'encapsulate',
 								options: { pre: '{' + '{subst:bv-ip}}', post: ' ~~' + '~~\n' }
@@ -501,7 +501,7 @@ $( function() {
 						'bv-av': {
 							label: 'Boas-vindas e aviso',
 							type: 'button',
-							icon: 'http://upload.wikimedia.org/wikipedia/commons/e/ec/Button_aviso.png',
+							icon: '//upload.wikimedia.org/wikipedia/commons/e/ec/Button_aviso.png',
 							action: {
 								type: 'encapsulate',
 								options: { pre: '{' + '{subst:bv-av|', post: '}} ~~' + '~~\n' }
@@ -519,7 +519,7 @@ $( function() {
 				'my-math': {
 					label: 'Fórmula matemática',
 					type: 'button',
-					icon: 'http://upload.wikimedia.org/wikipedia/commons/7/7d/Button_equation_he.png',
+					icon: '//upload.wikimedia.org/wikipedia/commons/7/7d/Button_equation_he.png',
 					action: {
 						type: 'encapsulate',
 						options: { pre: '<math>', post: '</math>' }
@@ -534,7 +534,7 @@ $( function() {
 				'my-strikethrough': {
 					label: 'Riscado',
 					type: 'button',
-					icon: 'http://upload.wikimedia.org/wikipedia/commons/c/c9/Button_strike.png',
+					icon: '//upload.wikimedia.org/wikipedia/commons/c/c9/Button_strike.png',
 					action: {
 						type: 'encapsulate',
 						options: { pre: '<s>', post: '</s>' }
