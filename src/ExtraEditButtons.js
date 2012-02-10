@@ -440,8 +440,8 @@ $( function() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{Inadequado|Conteúdo enciclopédico não é livro didático|[[w:{' + '{subst:PAGENAME}}, se for [[w:WP:N|notável]] e for [[w:WP:V|verificável]] por [[w:WP:FF|fontes fiáveis]].',
-											post: ']]|~~' + '~~}}\n'
+											pre: '{' + '{Inadequado|Conteúdo enciclopédico não é livro didático|[[w:{' + '{subst:PAGENAME}}]], se for [[w:WP:N|notável]] e for [[w:WP:V|verificável]] por [[w:WP:FF|fontes fiáveis]].',
+											post: '|~~' + '~~}}\n'
 										}
 									}
 								},
