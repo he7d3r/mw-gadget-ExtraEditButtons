@@ -6,7 +6,7 @@ $( function() {
 	if ( /^Helder\.wiki(\.bot)?$/.test( mw.config.get( 'wgUserName' ) ) ) {
 
 		$('.tab-advanced').find('a').text('Mais!');
-		$('.tab-characters).find('a').text('Caracteres');
+		$('.tab-characters').find('a').text('Caracteres');
 
 		$edit.wikiEditor( 'removeFromToolbar', { 'section': 'main', 'group': 'insert', 'tool': 'linkCGD' } )
 		.wikiEditor( 'removeFromToolbar', { 'section': 'main', 'group': 'insert', 'tool': 'signature' } )
