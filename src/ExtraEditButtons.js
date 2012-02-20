@@ -342,7 +342,7 @@ $( function() {
 									}
 								},
 								'VDA' : {
-									'label': 'Violação dos direitos de autor (VDA)',
+									'label': 'Plágio ou violação dos direitos de autor (VDA)',
 									'action': {
 										'type': 'encapsulate',
 										'options': {
