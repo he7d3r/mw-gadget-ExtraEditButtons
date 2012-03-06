@@ -1,8 +1,5 @@
-$( function() {
-    var $edit = $( '#wpTextbox1' );
-	if( typeof $edit.wikiEditor !== 'function' ) {
-		return;
-	}
+function customizeToolbar() {
+	var $edit = $( '#wpTextbox1' );
 	if ( /^Helder\.wiki(\.bot)?$/.test( mw.config.get( 'wgUserName' ) ) ) {
 
 		$('.tab-advanced').find('a').text('Mais!');
@@ -547,4 +544,15 @@ $( function() {
 			}
 		} );
 	}
-} );
+}
+ 
+/* Check if we are in edit mode and the required modules are available and then customize the toolbar */
+if ($.inArray(mw.config.get('wgAction'), ['edit', 'submit']) !== -1 ) {
+	mw.loader.using( 'user.options', function () {
+		if ( mw.user.options.get('usebetatoolbar') ) {
+			mw.loader.using( 'ext.wikiEditor.toolbar', function () {
+				$(customizeToolbar);
+			} );
+		}
+	} );
+}
