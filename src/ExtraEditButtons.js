@@ -1,3 +1,15 @@
+
+/**
+ * Add some extra buttons to enhanced edit toolbar
+ * @author: [[User:Helder.wiki]]
+ * @tracking: [[Special:GlobalUsage/User:Helder.wiki/Tools/Botões extras.js]] ([[File:User:Helder.wiki/Tools/Botões extras.js]])
+ */
+/*global $, console, mw */
+/*jslint white: true */
+console.debug('Executou "Tools/Botões extras.js"');
+$(function () {
+'use strict';
+
 function customizeToolbar() {
 	var $edit = $( '#wpTextbox1' );
 	if ( /^Helder\.wiki(\.bot)?$/.test( mw.config.get( 'wgUserName' ) ) ) {
@@ -20,14 +32,14 @@ function customizeToolbar() {
 					action: {
 						type: 'callback',
 						execute: function() {
-							var proj = ( mw.config.get( 'wgServer' ).indexOf('wikibooks') > -1) ? '' : 'b:';
-							var lang = ( 'pt' === mw.config.get( 'wgContentLanguage' ) ) ? '' : 'pt:';
+							var	proj = ( mw.config.get( 'wgServer' ).indexOf('wikibooks') > -1) ? '' : 'b:',
+								lang = ( 'pt' === mw.config.get( 'wgContentLanguage' ) ) ? '' : 'pt:';
 							if ( !proj && lang ) {
 								proj = ':';
 							}
-							$edit.text( function(index) {
-								var reOldSign = window.reOldSign || /OLDSIGNATURE/g;
-								var newSign = '[[' + proj + lang + 'User:Helder.wiki|Helder]]';
+							$edit.text( function() {
+								var	reOldSign = window.reOldSign || /OLDSIGNATURE/g;
+									newSign = '[[' + proj + lang + 'User:Helder.wiki|Helder]]';
 								this.value = this.value.replace( reOldSign, newSign );
 							} );
 							$( '#wpMinoredit' ).attr('checked', true);
@@ -556,3 +568,5 @@ if ($.inArray(mw.config.get('wgAction'), ['edit', 'submit']) !== -1 ) {
 		}
 	} );
 }
+
+});
