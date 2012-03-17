@@ -1,13 +1,12 @@
-
 /**
  * Add some extra buttons to enhanced edit toolbar
  * @author: [[User:Helder.wiki]]
  * @tracking: [[Special:GlobalUsage/User:Helder.wiki/Tools/Botões extras.js]] ([[File:User:Helder.wiki/Tools/Botões extras.js]])
  */
-/*global $, console, mw */
-/*jslint white: true */
+/*jslint browser: true, white: true, regexp: true*/
+/*global jQuery, mediaWiki */
 console.debug('Executou "Tools/Botões extras.js"');
-$(function () {
+( function ( $, mw /* , undefined */ ) {
 'use strict';
 
 function customizeToolbar() {
@@ -569,4 +568,4 @@ if ($.inArray(mw.config.get('wgAction'), ['edit', 'submit']) !== -1 ) {
 	} );
 }
 
-});
+}( jQuery, mediaWiki ) );
