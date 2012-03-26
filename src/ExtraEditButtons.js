@@ -452,7 +452,7 @@ function customizeToolbar() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{Inadequado|Conteúdo enciclopédico não é livro didático|[[w:{' + '{subst:PAGENAME}}]] (se cumprir as regras da Wikipédia, como [[w:WP:N|notabilidade]], [[w:WP:V|verificabilidade]] por [[w:WP:FF|fontes fiáveis]], etc...',
+											pre: '{' + '{Inadequado|Conteúdo enciclopédico não é livro didático|[[w:{' + '{subst:PAGENAME}}]] (se cumprir as regras da Wikipédia, como [[w:WP:N|notabilidade]], [[w:WP:V|verificabilidade]] por [[w:WP:FF|fontes fiáveis]], etc...)',
 											post: '|~~' + '~~}}\n'
 										}
 									}
