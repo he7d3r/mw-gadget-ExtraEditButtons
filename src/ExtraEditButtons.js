@@ -5,7 +5,7 @@
  */
 /*jslint browser: true, white: true, regexp: true*/
 /*global jQuery, mediaWiki */
-console.debug('Executou "Tools/Botões extras.js"');
+mw.log('Executou "Tools/Botões extras.js"');
 ( function ( $, mw /* , undefined */ ) {
 'use strict';
 
