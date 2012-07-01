@@ -471,7 +471,7 @@ function customizeToolbar() {
 									'action': {
 										'type': 'encapsulate',
 										'options': {
-											pre: '{' + '{Inadequado|Não é um livro livro didático|',
+											pre: '{' + '{Inadequado|Não é um livro didático|',
 											post: '|~~' + '~~}}\n'
 										}
 									}
