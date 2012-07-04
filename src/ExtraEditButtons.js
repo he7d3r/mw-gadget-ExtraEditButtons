@@ -5,7 +5,6 @@
  */
 /*jslint browser: true, white: true, regexp: true*/
 /*global jQuery, mediaWiki */
-mw.log('Executou "Tools/Botões extras.js"');
 ( function ( $, mw /* , undefined */ ) {
 'use strict';
 
@@ -246,13 +245,31 @@ function customizeToolbar() {
 		'section': 'main',
 		'group': 'insert',
 		'tools': {
-			'my-red': {
-				label: 'Texto vermelho',
+			'my-green': {
+				label: 'Texto verde sobre fundo branco',
 				type: 'button',
 				icon: '//upload.wikimedia.org/wikipedia/commons/8/8d/Button_rouge.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: '<span style="color:red;">', post: '</span>' }
+					options: { pre: '<span style="color: #060; background-color: #fff">', post: '</span>' }
+				}
+			},
+			'my-red-background': {
+				label: 'Texto preto sobre fundo vermelho',
+				type: 'button',
+				icon: '//upload.wikimedia.org/wikipedia/commons/1/1d/Button_base_red.png',
+				action: {
+					type: 'encapsulate',
+					options: { pre: '<span style="color: #000; background-color: #E99">', post: '</span>' }
+				}
+			},
+			'my-green-background': {
+				label: 'Texto preto sobre fundo verde',
+				type: 'button',
+				icon: '//upload.wikimedia.org/wikipedia/commons/6/6f/Button_base_green.png',
+				action: {
+					type: 'encapsulate',
+					options: { pre: '<span style="color: #000; background-color: #9E9">', post: '</span>' }
 				}
 			}
 		}
