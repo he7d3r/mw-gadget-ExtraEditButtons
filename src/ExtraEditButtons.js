@@ -251,7 +251,7 @@ function customizeToolbar() {
 				icon: '//upload.wikimedia.org/wikipedia/commons/8/8d/Button_rouge.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: '<span style="color: #060; background-color: #fff;">', post: '</span>' }
+					options: { pre: '<span style="color: #060; background: #fff;">', post: '</span>' }
 				}
 			},
 			'my-red-background': {
@@ -260,7 +260,7 @@ function customizeToolbar() {
 				icon: '//upload.wikimedia.org/wikipedia/commons/1/1d/Button_base_red.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: '<span style="color: #000; background-color: #E99;">', post: '</span>' }
+					options: { pre: '<span style="color: #000; background: #E99;">', post: '</span>' }
 				}
 			},
 			'my-green-background': {
@@ -269,7 +269,7 @@ function customizeToolbar() {
 				icon: '//upload.wikimedia.org/wikipedia/commons/6/6f/Button_base_green.png',
 				action: {
 					type: 'encapsulate',
-					options: { pre: '<span style="color: #000; background-color: #9E9;">', post: '</span>' }
+					options: { pre: '<span style="color: #000; background: #9E9;">', post: '</span>' }
 				}
 			}
 		}
