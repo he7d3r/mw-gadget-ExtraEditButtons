@@ -5,7 +5,7 @@
  */
 /*jslint browser: true, white: true, regexp: true*/
 /*global jQuery, mediaWiki */
-( function ( $, mw /* , undefined */ ) {
+( function ( $, mw ) {
 'use strict';
 
 function customizeToolbar() {
