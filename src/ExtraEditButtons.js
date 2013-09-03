@@ -580,10 +580,10 @@ if ($.inArray(mw.config.get('wgAction'), ['edit', 'submit']) !== -1 ) {
 		if ( mw.user.options.get('usebetatoolbar') ) {
 			mw.loader.using( 'ext.wikiEditor.toolbar', function () {
 				$( customizeToolbar );
-				mw.hook( 'ext.lqt.textareaCreated' ).add( customizeToolbar );
 			} );
 		}
 	} );
 }
+mw.hook( 'ext.lqt.textareaCreated' ).add( customizeToolbar );
 
 }( jQuery, mediaWiki ) );
