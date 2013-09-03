@@ -579,7 +579,8 @@ if ($.inArray(mw.config.get('wgAction'), ['edit', 'submit']) !== -1 ) {
 	mw.loader.using( 'user.options', function () {
 		if ( mw.user.options.get('usebetatoolbar') ) {
 			mw.loader.using( 'ext.wikiEditor.toolbar', function () {
-				$(customizeToolbar);
+				$( customizeToolbar );
+				mw.hook( 'ext.lqt.textareaCreated' ).add( customizeToolbar );
 			} );
 		}
 	} );
