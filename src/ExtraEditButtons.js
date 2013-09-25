@@ -1,7 +1,7 @@
 /**
  * Add some extra buttons to enhanced edit toolbar
  * @author: [[User:Helder.wiki]]
- * @tracking: [[Special:GlobalUsage/User:Helder.wiki/Tools/Botões extras.js]] ([[File:User:Helder.wiki/Tools/Botões extras.js]])
+ * @tracking: [[Special:GlobalUsage/User:Helder.wiki/Tools/ExtraEditButtons.js]] ([[File:User:Helder.wiki/Tools/ExtraEditButtons.js]])
  */
 /*jslint browser: true, white: true, regexp: true*/
 /*global jQuery, mediaWiki */
@@ -574,7 +574,7 @@ function customizeToolbar() {
 	}
 }
  
-/* Check if we are in edit mode and the required modules are available and then customize the toolbar */
+/* Check if view is in edit mode and that the required modules are available. Then, customize the toolbar . . . */
 if ($.inArray(mw.config.get('wgAction'), ['edit', 'submit']) !== -1 ) {
 	mw.loader.using( 'user.options', function () {
 		if ( mw.user.options.get('usebetatoolbar') ) {
