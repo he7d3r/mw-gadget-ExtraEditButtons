@@ -1,6 +1,7 @@
 /**
  * Add some extra buttons to enhanced edit toolbar
- * @author: [[User:Helder.wiki]]
+ * @author: Helder (https://github.com/he7d3r)
+ * @license: CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0/>
  * @tracking: [[Special:GlobalUsage/User:Helder.wiki/Tools/ExtraEditButtons.js]] ([[File:User:Helder.wiki/Tools/ExtraEditButtons.js]])
  */
 /*jslint browser: true, white: true, regexp: true*/
