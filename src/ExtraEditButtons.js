@@ -578,7 +578,9 @@ function customizeToolbar() {
 /* Check if view is in edit mode and that the required modules are available. Then, customize the toolbar . . . */
 if ( $.inArray( mw.config.get( 'wgAction' ), [ 'edit', 'submit' ] ) !== -1 ) {
 	mw.loader.using( 'user.options', function () {
-		if ( mw.user.options.get( 'usebetatoolbar' ) && mw.user.options.get( 'showtoolbar' ) ) {
+		// This can be the string "0" if the user disabled the preference ([[bugzilla:52542#c3]])
+		/*jshint eqeqeq:false*/
+		if ( mw.user.options.get( 'usebetatoolbar' ) == 1 && mw.user.options.get( 'showtoolbar' ) == 1 ) {
 			$.when(
 				mw.loader.using( 'ext.wikiEditor.toolbar' ),
 				$.ready
