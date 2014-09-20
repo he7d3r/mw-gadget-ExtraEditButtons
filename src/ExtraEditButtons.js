@@ -10,45 +10,6 @@
 
 function customizeToolbar() {
 	var $edit = $( '#wpTextbox1' );
-	if ( /^Helder\.wiki(\.bot)?$/.test( mw.config.get( 'wgUserName' ) ) ) {
-
-		$('.tab-advanced').find('a').text('Mais!');
-		$('.tab-characters').find('a').text('Caracteres');
-
-		$edit.wikiEditor( 'removeFromToolbar', { 'section': 'main', 'group': 'insert', 'tool': 'linkCGD' } )
-		.wikiEditor( 'removeFromToolbar', { 'section': 'main', 'group': 'insert', 'tool': 'signature' } )
-		.wikiEditor( 'removeFromToolbar', { 'section': 'help' } )
-		.wikiEditor( 'removeFromToolbar', { 'section': 'advanced', 'group': 'format', 'tool': 'newline' } )
-		.wikiEditor( 'addToToolbar', {
-			'section': 'main',
-			'group': 'insert',
-			'tools': {
-				'my-sign': {
-					label: 'Corrigir minha assinatura',
-					type: 'button',
-					icon: '//upload.wikimedia.org/wikipedia/commons/2/27/Vector_toolbar_signature_button.png',
-					action: {
-						type: 'callback',
-						execute: function() {
-							var	proj = ( mw.config.get( 'wgServer' ).indexOf('wikibooks') > -1) ? '' : 'b:',
-								lang = ( 'pt' === mw.config.get( 'wgContentLanguage' ) ) ? '' : 'pt:';
-							if ( !proj && lang ) {
-								proj = ':';
-							}
-							$edit.text( function() {
-								var	reOldSign = window.reOldSign || /OLDSIGNATURE/g;
-									newSign = '[[' + proj + lang + 'User:Helder.wiki|Helder]]';
-								this.value = this.value.replace( reOldSign, newSign );
-							} );
-							$( '#wpMinoredit' ).attr('checked', true);
-							$( '#wpSummary' ).val( 'Fixing links (my user account was renamed)' );
-							$( '#wpDiff' ).submit();
-						}
-					}
-				}
-			}
-		} );
-	}
 	$edit.wikiEditor( 'addToToolbar', {
 		'sections': {
 			'imagens': {
