@@ -44,7 +44,7 @@
 					icon: '//upload.wikimedia.org/wikipedia/commons/d/d2/Button_source.png',
 					action: {
 						type: 'encapsulate',
-						options: { pre: '<syntaxhighlight lang="javascript" enclose="pre">\n', post: '\n</syntaxhighlight>' }
+						options: { pre: '<syntaxhighlight lang="javascript">\n', post: '\n</syntaxhighlight>' }
 					}
 				},
 				'my-comment': {
